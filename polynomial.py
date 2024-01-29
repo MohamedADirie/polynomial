@@ -4,7 +4,9 @@ class X:
 
     def __repr__(self):
         return "X"
-    
+
+    def evaluate(self, x):
+        return x
 
 class Int:
     def __init__(self, i):
@@ -72,5 +74,5 @@ class Sub:
     def evaluate(self, x):
         return self.p1.evaluate(x) - self.p2.evaluate(x)
 
-poly = Add( Sub( Int(4), Int(1)), Int(4))
+poly = Add( Sub( Int(4), X()), Int(4))
 print(poly.evaluate(1))
